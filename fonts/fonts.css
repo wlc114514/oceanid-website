@@ -1,0 +1,5 @@
+/* 开源字体（SIL OFL），latin 子集，本地托管。Big Shoulders 和 Plex Sans 是可变字体，一个文件覆盖所有字重 */
+@font-face { font-family: 'Big Shoulders Display'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('BigShouldersDisplay.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-weight: 100 700; font-display: swap; src: url('IBMPlexSans.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url('IBMPlexMono-400.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('IBMPlexMono-500.woff2') format('woff2'); }

@@ -1,0 +1,10 @@
+# 只在维护者电脑上保留、不公开的东西
+assets/rov-cad/
+assets/triton-hero/
+assets/backup-pre-minimal/
+demos/
+img/entry/triton-torch.png
+
+# Python 缓存
+__pycache__/
+*.pyc

@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oceanid Robotics</title>
+<meta name="description" content="Oceanid Robotics is a student ROV company competing in the MATE ROV Competition.">
+<meta name="theme-color" content="#08173a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 22'%3E%3Cpath d='M9 1v20M2 3v4a7 7 0 0 0 14 0V3' fill='none' stroke='%2396d4ff' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/BigShouldersDisplay.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="css/style.css?v=11">
+<script>
+  // 下潜开场（js/intro.js）只在第一次访问时播放；网址加 ?intro 可以重看。在这里先加 class，页面就不会先闪一下
+  try {
+    if ((location.search.includes('intro') || !localStorage.getItem('oceanid-dived')) && !location.hash &&
+        !matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('diving');
+  } catch {}
+</script>
+</head>
+<body>
+
+<!-- 占位内容都用 <span class="ph">…</span> 标出（页面上是琥珀色虚线），上线前全部替换 -->
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Oceanid Robotics home">
+      <svg viewBox="0 0 18 22" aria-hidden="true"><path d="M9 1v20M2 3v4a7 7 0 0 0 14 0V3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      <span>Oceanid</span>
+    </a>
+    <nav class="nav label" id="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#vehicle">Vehicle</a>
+      <a href="#team">Team</a>
+      <a href="#process">Process</a>
+      <a href="#safety">Safety</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="depth-mini" aria-hidden="true"><span data-depth-out>0</span> m</div>
+    <!-- 手机上导航收在这个按钮里（js/main.js） -->
+    <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path class="bars" d="M2 7h16M2 13h16"/><path class="x" d="M4 4l12 12M16 4L4 16"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- 侧边深度计：数值由 js/main.js 根据滚动位置计算 -->
+<div class="gauge" aria-hidden="true">
+  <div class="gauge-track"></div>
+  <div class="gauge-mark"></div>
+  <div class="gauge-read"><strong><span data-depth-out>0</span> m</strong><span data-zone-out>Epipelagic</span></div>
+</div>
+
+<main id="top">
+
+  <!-- 01 首页 -->
+  <section class="hero" data-depth="0">
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1>Oceanid <span class="sub">Robotics</span></h1>
+        <p class="lead">Student ROV company competing in the MATE ROV Competition.</p>
+        <div class="actions">
+          <a class="btn primary" href="#vehicle">Meet the vehicle ↓</a>
+          <a class="btn" href="#contact">Contact us</a>
+        </div>
+      </div>
+      <figure class="fig">
+        <div class="frame">
+          <img class="hero-img" src="img/hero-triton.webp" width="1400" height="1589" alt="Engraving of Triton kneeling in the sea, blowing into a conch shell">
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 02 关于 -->
+  <section id="about" data-depth="200">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="prose">
+          <div class="sec-head">
+            <h2>Named for the daughters of the sea</h2>
+          </div>
+          <p class="lead">The Oceanids are the three thousand daughters of Oceanus and Tethys, each guarding her own stretch of water. We are <span class="ph">[number]</span> students from <span class="ph">[school name]</span> building ROVs that do useful work under water.</p>
+        </div>
+        <figure class="fig">
+          <div class="frame">
+            <div class="dither oceanus">
+              <picture>
+                <source media="(max-width: 1000px) and (min-resolution: 1.7dppx) and (max-resolution: 1.8dppx)" srcset="img/dither/oceanus-300-d175.png">
+                <source media="(max-width: 1000px) and (min-resolution: 1.45dppx) and (max-resolution: 1.55dppx)" srcset="img/dither/oceanus-300-d150.png">
+                <source media="(max-width: 1000px) and (min-resolution: 1.2dppx) and (max-resolution: 1.3dppx)" srcset="img/dither/oceanus-300-d125.png">
+                <source media="(max-width: 1000px)" srcset="img/dither/oceanus-300.png">
+                <source media="(min-resolution: 1.7dppx) and (max-resolution: 1.8dppx)" srcset="img/dither/oceanus-360-d175.png">
+                <source media="(min-resolution: 1.45dppx) and (max-resolution: 1.55dppx)" srcset="img/dither/oceanus-360-d150.png">
+                <source media="(min-resolution: 1.2dppx) and (max-resolution: 1.3dppx)" srcset="img/dither/oceanus-360-d125.png">
+                <img src="img/dither/oceanus-360.png" width="360" height="478" alt="Engraving of Oceanus with a trident, riding a sea creature" loading="lazy">
+              </picture>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 ROV -->
+  <section id="vehicle" data-depth="1000">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="ph">[ROV name]</span></h2>
+      </div>
+
+      <div class="rov-grid">
+        <!-- 转盘渲染：tools/render_rov.py（72 张，每 5°）→ tools/build_images.py 染色 → js/spin.js 拖动切换。
+             主舱和舵机是按设计补上的，所以右上角的 i 图标里注明是设计迭代版本（悬停、聚焦或点一下显示） -->
+        <figure class="fig">
+          <div class="frame spin" tabindex="0" role="img" data-frames="72" data-pattern="img/rov-spin/{n}.avif?v=4"
+               aria-label="CAD render of the ROV: open frame with eight vectored thrusters, two hull compartments and a front gripper. Drag or use the arrow keys to rotate.">
+            <img src="img/rov-spin/000.avif?v=4" width="1800" height="1300" alt="" draggable="false">
+            <span class="spin-hint label" aria-hidden="true">⟷</span>
+          </div>
+          <button class="info" type="button" aria-label="About this render" aria-describedby="rov-note" aria-expanded="false">i</button>
+          <span class="tip" role="tooltip" id="rov-note">CAD render, design iteration Oct 2026. Hull and servo are placeholders.</span>
+        </figure>
+        <table class="specs">
+          <caption class="sr-only">Specifications</caption>
+          <tbody>
+            <tr><th scope="row">Class</th><td><span class="ph">[Ranger / Pioneer / Explorer]</span></td></tr>
+            <tr><th scope="row">Mass in air</th><td><span class="ph">[ ] kg</span></td></tr>
+            <tr><th scope="row">Size (L × W × H)</th><td><span class="ph">[ ] × [ ] × [ ] mm</span></td></tr>
+            <tr><th scope="row">Thrusters</th><td><span class="ph">[ ] × [model]</span></td></tr>
+            <tr><th scope="row">Frame</th><td><span class="ph">[material]</span></td></tr>
+            <tr><th scope="row">Power</th><td><span class="ph">[ ] V DC, [ ] A max</span></td></tr>
+            <tr><th scope="row">Tether length</th><td><span class="ph">[ ] m</span></td></tr>
+            <tr><th scope="row">Cameras</th><td><span class="ph">[ ]</span></td></tr>
+            <tr><th scope="row">Tools</th><td><span class="ph">[gripper, sensors …]</span></td></tr>
+            <tr><th scope="row">Build cost</th><td><span class="ph">[ ] USD</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 任务难点：比赛任务公布后替换成真实的难点和对策 -->
+      <div class="challenges" data-depth="2500">
+        <h3>Mission challenges</h3>
+        <div class="ch-list">
+          <article class="ch">
+            <div class="shot dither" aria-hidden="true">
+              <picture>
+                <source media="(min-resolution: 1.7dppx) and (max-resolution: 1.8dppx)" srcset="img/dither/jonah-whale-d175.png">
+                <source media="(min-resolution: 1.45dppx) and (max-resolution: 1.55dppx)" srcset="img/dither/jonah-whale-d150.png">
+                <source media="(min-resolution: 1.2dppx) and (max-resolution: 1.3dppx)" srcset="img/dither/jonah-whale-d125.png">
+                <img src="img/dither/jonah-whale.png" width="560" height="240" alt="" loading="lazy">
+              </picture>
+            </div>
+            <div class="ch-body">
+              <p class="label"><span class="ph">[task name]</span></p>
+              <h4>Holding position in a current</h4>
+              <p class="approach"><span class="ph">[How the ROV deals with it — e.g. depth and heading hold in software, thruster layout]</span></p>
+            </div>
+          </article>
+          <article class="ch">
+            <div class="shot dither" aria-hidden="true">
+              <picture>
+                <source media="(min-resolution: 1.7dppx) and (max-resolution: 1.8dppx)" srcset="img/dither/ship-storm-d175.png">
+                <source media="(min-resolution: 1.45dppx) and (max-resolution: 1.55dppx)" srcset="img/dither/ship-storm-d150.png">
+                <source media="(min-resolution: 1.2dppx) and (max-resolution: 1.3dppx)" srcset="img/dither/ship-storm-d125.png">
+                <img src="img/dither/ship-storm.png" width="560" height="240" alt="" loading="lazy">
+              </picture>
+            </div>
+            <div class="ch-body">
+              <p class="label"><span class="ph">[task name]</span></p>
+              <h4>Seeing in murky water</h4>
+              <p class="approach"><span class="ph">[How the ROV deals with it — e.g. camera placement, lighting, on-screen overlays]</span></p>
+            </div>
+          </article>
+          <article class="ch">
+            <div class="shot dither" aria-hidden="true">
+              <picture>
+                <source media="(min-resolution: 1.7dppx) and (max-resolution: 1.8dppx)" srcset="img/dither/sea-horse-d175.png">
+                <source media="(min-resolution: 1.45dppx) and (max-resolution: 1.55dppx)" srcset="img/dither/sea-horse-d150.png">
+                <source media="(min-resolution: 1.2dppx) and (max-resolution: 1.3dppx)" srcset="img/dither/sea-horse-d125.png">
+                <img src="img/dither/sea-horse.png" width="560" height="240" alt="" loading="lazy">
+              </picture>
+            </div>
+            <div class="ch-body">
+              <p class="label"><span class="ph">[task name]</span></p>
+              <h4>Handling small, fragile objects</h4>
+              <p class="approach"><span class="ph">[How the ROV deals with it — e.g. gripper design, force limits]</span></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 团队 -->
+  <section id="team" data-depth="4000">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Team</h2>
+      </div>
+      <div class="roster">
+        <div class="member"><p class="label">Chief Executive Officer</p><p class="name"><span class="ph">[Name]</span></p></div>
+        <div class="member"><p class="label">Chief Financial Officer</p><p class="name"><span class="ph">[Name]</span></p></div>
+        <div class="member"><p class="label">Safety Officer</p><p class="name"><span class="ph">[Name]</span></p></div>
+        <div class="member"><p class="label">Mechanical Lead</p><p class="name"><span class="ph">[Name]</span></p></div>
+        <div class="member"><p class="label">Electrical Lead</p><p class="name"><span class="ph">[Name]</span></p></div>
+        <div class="member"><p class="label">Software Lead</p><p class="name"><span class="ph">[Name]</span></p></div>
+        <div class="member"><p class="label">Pilot</p><p class="name"><span class="ph">[Name]</span></p></div>
+        <div class="member"><p class="label">Mentor</p><p class="name"><span class="ph">[Name]</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 工程过程 -->
+  <section id="process" data-depth="5000">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>How we build</h2>
+      </div>
+      <ol class="steps">
+        <li><span class="n" aria-hidden="true">01</span><h3>Read the mission</h3></li>
+        <li><span class="n" aria-hidden="true">02</span><h3>Design in CAD</h3></li>
+        <li><span class="n" aria-hidden="true">03</span><h3>Prototype</h3></li>
+        <li><span class="n" aria-hidden="true">04</span><h3>Pool test</h3></li>
+        <li><span class="n" aria-hidden="true">05</span><h3>Iterate</h3></li>
+        <li><span class="n" aria-hidden="true">06</span><h3>Document</h3></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 06 安全：清单要按机器实际有的安全设计改 -->
+  <section id="safety" data-depth="6000">
+    <div class="wrap">
+      <div class="safety-grid">
+        <div class="sec-head">
+          <h2>Safety</h2>
+        </div>
+        <ul class="checks">
+          <li><b>Fused main power</b></li>
+          <li><b>Guarded thrusters</b></li>
+          <li><b>Tether strain relief</b></li>
+          <li><b>Sealed, leak-tested electronics</b></li>
+          <li><b>Labelled hazards</b></li>
+          <li><b>Job safety analysis before every launch</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 联系 -->
+  <section id="contact" class="contact" data-depth="10935">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Contact</h2>
+      </div>
+      <!-- 邮箱换成真的时，href 和显示的文字两处都要改 -->
+      <div class="mail-row">
+        <a class="mail" id="email" href="mailto:team@your-domain"><span class="ph">[team@your-domain]</span></a>
+        <button class="icon-btn" type="button" data-copy="email" aria-label="Copy email">
+          <svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
+            <g class="cp"><rect x="7" y="7" width="10" height="10"/><path d="M13 7V3H3v10h4"/></g><path class="ok" d="M4 10.5l4 4 8-9"/>
+          </svg>
+        </button>
+        <span class="label" role="status" data-copy-status></span>
+      </div>
+      <p class="label where"><span class="ph">[School name]</span> · <span class="ph">[City, Country]</span></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-line label">
+    <span>© <span class="ph">[2027]</span> Oceanid Robotics · Engravings: Rijksmuseum, CC0
+      (<a href="https://commons.wikimedia.org/wiki/File:Triton_blaast_op_zijn_schelp,_RP-P-OB-67.306.jpg" aria-label="Triton engraving source">1</a>
+      <a href="https://commons.wikimedia.org/wiki/File:Oceanus_Goden_en_godinnen_(serietitel),_RP-P-OB-10.470.jpg" aria-label="Oceanus engraving source">2</a>
+      <a href="https://commons.wikimedia.org/wiki/File:Jona_en_de_walvis,_RP-P-2015-17-124-3.jpg" aria-label="Jonah and the whale engraving source">3</a>
+      <a href="https://commons.wikimedia.org/wiki/File:Schip_in_nood_bij_hevige_storm,_RP-P-OB-29.395.jpg" aria-label="Ship in a storm engraving source">4</a>
+      <a href="https://commons.wikimedia.org/wiki/File:Zeepaard_met_een_mannelijk_bovenlichaam_Nouveau_Livre_des_Dieux_et_Dee%C3%9Fes_De_la_Marine_Bouckje_van_Zeegoden_en_Godinnen_(serietitel),_RP-P-1964-2468.jpg" aria-label="Sea horse engraving source">5</a>)</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="js/main.js?v=3"></script>
+<script src="js/spin.js?v=3"></script>
+<script src="js/intro.js?v=12"></script>
+</body>
+</html>
