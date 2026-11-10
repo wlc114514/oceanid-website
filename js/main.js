@@ -24,7 +24,7 @@
     if (scrollY + innerHeight >= doc.scrollHeight - 4) {
       depth = points[points.length - 1].d; // 滚到底就是最深处
     } else {
-      // 读数取屏幕上方 40% 处的位置；页面顶部那一段从 0 逐渐过渡过去，保证没滚动时正好是 0 m
+      // 读数取屏幕上方 40% 处的位置；页面顶部那一段逐渐过渡过去，保证没滚动时正好是第一个区块的深度（200 m，接着开场动画）
       const y = scrollY + Math.min(scrollY, innerHeight * 0.4);
       depth = points[0].d;
       for (let k = 0; k < points.length; k++) {

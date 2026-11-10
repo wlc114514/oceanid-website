@@ -20,7 +20,7 @@ python -m http.server 8765 --bind 127.0.0.1
 |---|---|
 | `index.html` | 页面。占位内容都包在 `<span class="ph">` 里，页面上显示成琥珀色虚线，上线前搜 `class="ph"` 全部替换 |
 | `css/style.css` | 样式；文件开头的 `:root` 是配色和字体。改完把 `index.html` 里 `style.css?v=` 的数字加 1，不然浏览器可能用缓存里的旧样式 |
-| `js/main.js` | 侧边深度计、手机菜单、复制邮箱按钮、图上的 i 提示 |
+| `js/main.js` | 侧边深度计（页面从 200 m 开始，接着开场动画的 0–200 m）、手机菜单、复制邮箱按钮、图上的 i 提示 |
 | `js/spin.js` | ROV 转盘：左右拖动切换预先渲染好的图 |
 | `js/intro.js` | 下潜开场（第一次访问才播，网址加 `?intro` 可重看）。素材在 `img/entry/`：颗粒 Triton 由 `tools/build_entry.py` 生成，出水的水面线和雾（AVIF 序列帧）由 `tools/build_water.py` 生成；重新渲染后把 `intro.js` 开头的 `V` 加 1 |
 | `img/` | 网页用图，全部由 `tools/` 里的脚本离线生成，浏览器里不做任何颗粒计算 |
@@ -35,6 +35,13 @@ python -m http.server 8765 --bind 127.0.0.1
 版画全部来自 Rijksmuseum（经 Wikimedia Commons，CC0）。
 
 没有放进仓库、只在维护者电脑上的东西：ROV 的 STL 设计文件和原始渲染（`assets/rov-cad/`）、首页选图时的对比稿、入口方案的样品页（`demos/`）。
+
+## 许可
+
+- 网站代码和脚本（HTML、CSS、JS、Python）：MIT，见 [LICENSE](LICENSE)
+- `photos/` 里的照片**不在 MIT 范围内**：版权归拍摄者和 Oceanid Robotics 所有，未经同意请勿转载或使用
+- 版画：Rijksmuseum 藏品，CC0（公有领域），出处见 `assets/originals/credits.json`
+- 字体：SIL Open Font License 1.1，许可证全文在 `fonts/OFL-BigShouldersDisplay.txt` 和 `fonts/OFL-IBMPlex.txt`
 
 ## 抖动颗粒图是怎么显示的
 

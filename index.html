@@ -36,7 +36,7 @@
       <a href="#safety">Safety</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="depth-mini" aria-hidden="true"><span data-depth-out>0</span> m</div>
+    <div class="depth-mini" aria-hidden="true"><span data-depth-out>200</span> m</div>
     <!-- 手机上导航收在这个按钮里（js/main.js） -->
     <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav">
       <svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -46,17 +46,18 @@
   </div>
 </header>
 
-<!-- 侧边深度计：数值由 js/main.js 根据滚动位置计算 -->
+<!-- 侧边深度计：数值由 js/main.js 根据滚动位置计算。
+     页面从 200 m 开始：0–200 m 那一段是下潜开场（js/intro.js）走完的，页面接着往下 -->
 <div class="gauge" aria-hidden="true">
   <div class="gauge-track"></div>
   <div class="gauge-mark"></div>
-  <div class="gauge-read"><strong><span data-depth-out>0</span> m</strong><span data-zone-out>Epipelagic</span></div>
+  <div class="gauge-read"><strong><span data-depth-out>200</span> m</strong><span data-zone-out>Mesopelagic</span></div>
 </div>
 
 <main id="top">
 
   <!-- 01 首页 -->
-  <section class="hero" data-depth="0">
+  <section class="hero" data-depth="200">
     <div class="wrap">
       <div class="hero-copy">
         <h1>Oceanid <span class="sub">Robotics</span></h1>
@@ -75,7 +76,7 @@
   </section>
 
   <!-- 02 关于 -->
-  <section id="about" data-depth="200">
+  <section id="about" data-depth="500">
     <div class="wrap">
       <div class="about-grid">
         <div class="prose">
@@ -282,7 +283,7 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=3"></script>
+<script src="js/main.js?v=4"></script>
 <script src="js/spin.js?v=3"></script>
 <script src="js/intro.js?v=12"></script>
 </body>
